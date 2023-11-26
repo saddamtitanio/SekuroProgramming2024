@@ -79,8 +79,7 @@ void load() {
     if (file.is_open()) {        
         std::string line, coordinateStr;
         float coordinate;
-
-        // Read and print each line of the file
+        
         while (std::getline(file, line)) {
             std::stringstream token(line);
             std::getline(token, coordinateStr, ',');
@@ -90,7 +89,6 @@ void load() {
             coordinates[1] = std::strtof(coordinateStr.c_str(), nullptr);
         }
 
-        // Close the file after reading
         file.close();
     } else {
         std::cerr << "Unable to open the file." << std::endl;
